@@ -11,11 +11,14 @@ begin
 	using LinearAlgebra
 end
 
+# ╔═╡ 404b698c-9236-11eb-08a4-733b54767e4b
+md"# Chapter 1 Section 2"
+
 # ╔═╡ b735edd8-9222-11eb-0e93-19364b40d89c
 begin
 	img = load("../data/dog.jpg")
 	X = convert(Array{Float64}, Gray.(img))
-	plot(img)
+	plot(img, axis=nothing)
 end
 
 # ╔═╡ bc4b9b00-9223-11eb-25c2-5b0c4163f1e6
@@ -52,6 +55,7 @@ begin
 end
 
 # ╔═╡ Cell order:
+# ╟─404b698c-9236-11eb-08a4-733b54767e4b
 # ╠═044e23d8-921e-11eb-1aed-a38e702cb35f
 # ╠═b735edd8-9222-11eb-0e93-19364b40d89c
 # ╠═bc4b9b00-9223-11eb-25c2-5b0c4163f1e6

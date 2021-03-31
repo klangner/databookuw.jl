@@ -11,6 +11,13 @@ Copyright 2019, All Rights Reserved
 http://databookuw.com/
 
 
+## Notebooks
+
+  * [Chapter 1, Section 2](https://klangner.github.io/databookuw.jl/CH01_SEC02.jl.html)
+
+
+## Other resources
+
 [Python version](https://github.com/dynamicslab/databook_python)
 
 [MATLAB version](https://github.com/dynamicslab/databook_matlab)
