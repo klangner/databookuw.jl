@@ -44,14 +44,21 @@ md"## Chapter 1 Exercise 2/2"
 
 # ╔═╡ 39c5ada8-9230-11eb-30c1-6de256945308
 begin
-	
-	p_2 = plot(layout=2, legend=false)
-	plot!(p_2[1], Σ, yaxis=:log)
-	title!(p_2[1], "Singular Values")
-	
-	plot!(p_2[2], cumsum(Σ) ./ sum(Σ))
-	title!(p_2[2], "Singular Values:\nCumulative Sum")
-	p_2
+	x2 = [5, 20, 100]
+	y2 = map(i -> Σ[i], x2)
+	p2 = plot(Σ, yaxis=:log, legend=false, title="Singular Values")
+	plot!(p2, x2, y2, seriestype = :scatter)
+	p2
+end
+
+# ╔═╡ e26863f0-92ef-11eb-0b92-2594c60236b4
+begin
+	xcum = cumsum(Σ) ./ sum(Σ)
+	x3 = [5, 20, 100]
+	y3 = map(i -> xcum[i], x3)
+	p3 = plot(xcum, title="Singular Values:\nCumulative Sum")
+	plot!(p3, x3, y3, seriestype = :scatter)
+	p3
 end
 
 # ╔═╡ Cell order:
@@ -61,3 +68,4 @@ end
 # ╠═bc4b9b00-9223-11eb-25c2-5b0c4163f1e6
 # ╟─34415a2c-922f-11eb-2664-f36e406821e4
 # ╠═39c5ada8-9230-11eb-30c1-6de256945308
+# ╠═e26863f0-92ef-11eb-0b92-2594c60236b4
