@@ -38,10 +38,11 @@ begin
 end
 
 # ╔═╡ 6d1c0409-8a35-41b9-9f08-3b603d2c6e0e
-function plot_surface(x, y, z)
+function plot_surface(x, y, z, cz)
 	fig = figure(1)
 	clf()
-	surf(x,y,z, cmap="jet", alpha=0.9, linewidth=0.5, rcount=30, ccount=30)
+	s = surf(x,y,z, cmap="jet", facecolors=plt.cm.jet(cz), alpha=0.9, linewidth=0.5, rcount=30, ccount=30)
+	s[:set_edgecolor]("k")
 	ax = gca()
 	ax[:set_xlim3d]([-2, 2])
 	ax[:set_ylim3d]([-2, 2])
@@ -57,7 +58,7 @@ begin
 	x = cos.(u) .* sin.(v)'
 	y = sin.(u) .* sin.(v)'
 	z = repeat(cos.(v)', outer=[N, 1])
-	plot_surface(x, y, z)
+	plot_surface(x, y, z, z)
 end
 
 # ╔═╡ b657eef2-a14a-434b-97e1-846b1fb0dfa5
@@ -76,7 +77,7 @@ begin
 		end
 	end
 	
-	plot_surface(xr, yr, zr)
+	plot_surface(xr, yr, zr, z)
 end
 
 # ╔═╡ Cell order:
